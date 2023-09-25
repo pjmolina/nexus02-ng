@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -22,5 +22,9 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('spa1');
+  });
+  it(`sum 1 2 should be 3`, () => {
+    const res = 1 + 2;
+    expect(res).toEqual(3);
   });
 });
