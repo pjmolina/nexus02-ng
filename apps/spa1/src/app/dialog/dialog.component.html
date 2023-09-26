@@ -1,0 +1,14 @@
+<div class="dialog">
+  <h1>{{ titulo }}</h1>
+  <h2>
+    <ng-content select="[subtitulo]"></ng-content>
+  </h2>
+
+  <div class="content">
+    <ng-content select="[contenido]"></ng-content>
+  </div>
+  <div class="actions">
+    <button (click)="handleOk()">Aceptar</button>
+    <button (click)="handleCancel()">Cancelar</button>
+  </div>
+</div>

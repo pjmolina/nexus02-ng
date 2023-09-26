@@ -48,6 +48,10 @@ export class AppComponent {
     this.cache[n] = v1; // guardar en cache
     return v1;
   }
+
+  onOk1() {
+    // todo.
+  }
 }
 
 // es -> [es: Espal]

@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
+import { DialogComponent } from './dialog/dialog.component';
 import { TemperaturaComponent } from './temperatura/temperatura.component';
 
 @NgModule({
-  declarations: [AppComponent, TemperaturaComponent],
+  declarations: [AppComponent, TemperaturaComponent, DialogComponent],
   imports: [
     FormsModule,
     BrowserModule,

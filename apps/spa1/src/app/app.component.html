@@ -12,4 +12,20 @@
   <span>{{ resultado }}</span>
 </div>
 
+<org-dialog titulo="Ejemplo de formulario" (ok)="onOk1()">
+  <span subtitulo>Este es el subtitulo1</span>
+  <div contenido>
+    Hola
+    <button>A1</button>
+  </div>
+</org-dialog>
+
+<org-dialog titulo="Ejemplol 2">
+  <span subtitulo>Este es el subtitulo2</span>
+  <div contenido>
+    Adios
+    <button>Z</button>
+  </div>
+</org-dialog>
+
 <router-outlet></router-outlet>
