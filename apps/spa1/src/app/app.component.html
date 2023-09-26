@@ -5,4 +5,11 @@
   <div [class.even]="i % 2 === 0">{{ i }} - {{ pais.id }} {{ pais.name }}</div>
 </div>
 
+<div class="fib">
+  <input type="number" [(ngModel)]="ordinal" />
+  <button (click)="calcularFibonacci(ordinal)">Calcula</button>
+  <br />
+  <span>{{ resultado }}</span>
+</div>
+
 <router-outlet></router-outlet>
