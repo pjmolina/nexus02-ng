@@ -1,3 +1,8 @@
 <h1>Applicacion</h1>
-<org-temperatura ciudad="Madrid" [temperatura]="20"></org-temperatura>
+<!-- <org-temperatura ciudad="Madrid" [temperatura]="20"></org-temperatura> -->
+
+<div *ngFor="let pais of paises; let i = index; trackBy: trackById">
+  <div [class.even]="i % 2 === 0">{{ i }} - {{ pais.id }} {{ pais.name }}</div>
+</div>
+
 <router-outlet></router-outlet>
