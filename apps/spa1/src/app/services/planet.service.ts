@@ -5,37 +5,32 @@ import { Page } from '../domain/paginated-response';
 import { Planet, PlanetResponse } from '../domain/planet';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PlanetService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   // getPlanets(): Planet[] {}
 
   getPlanetById(id: number): Observable<Planet> {
     const url = `https://swapi.dev/api/planets/${encodeURIComponent(id)}`;
-    return this.http.get<PlanetResponse>(url, {
-      headers: {
-      }
-    }).pipe(
-      map(pr => convertToPlanet(pr))
-    );
+    return this.http
+      .get<PlanetResponse>(url, {
+        headers: {},
+      })
+      .pipe(map((pr) => convertToPlanet(pr)));
   }
   getPlanets(): Observable<Planet[]> {
     const url = `https://swapi.dev/api/planets/`;
-    return this.http.get<Page<PlanetResponse>>(url, {
-      headers: {
-      }
-    }).pipe(
-      map(pr => pr.results.map(it => convertToPlanet(it)))
-    );
+    return this.http
+      .get<Page<PlanetResponse>>(url, {
+        headers: {},
+      })
+      .pipe(map((pr) => pr.results.map((it) => convertToPlanet(it))));
   }
-
 }
 
-
-const convertToPlanet = (p: PlanetResponse): Planet => {
+export const convertToPlanet = (p: PlanetResponse): Planet => {
   return {
     ...p,
     rotation_period: parseInt(p.rotation_period, 10),

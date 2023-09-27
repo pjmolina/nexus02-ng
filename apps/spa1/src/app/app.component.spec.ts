@@ -1,8 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Observable, of } from 'rxjs';
 import { AppComponent, fib } from './app.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { Planet } from './domain/planet';
+import { PlanetListComponent } from './planets/planet-list/planet-list.component';
+import { PlanetService } from './services/planet.service';
 
 describe('fib', () => {
   it('fib(0) = 0', () => {
@@ -22,11 +26,18 @@ describe('fib', () => {
   });
 });
 
+class PlanetServiceMock {
+  getPlanets(): Observable<Planet[]> {
+    return of([]);
+  }
+}
+
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, FormsModule],
-      declarations: [AppComponent, DialogComponent],
+      declarations: [AppComponent, DialogComponent, PlanetListComponent],
+      providers: [{ provide: PlanetService, useClass: PlanetServiceMock }],
     }).compileComponents();
   });
 
