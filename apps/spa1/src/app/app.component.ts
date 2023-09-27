@@ -56,7 +56,7 @@ export class AppComponent {
 
 // es -> [es: Espal]
 
-const fib = (n: number): number => {
+export const fib = (n: number): number => {
   // console.log(n);
   if (n === 0) {
     return 0;

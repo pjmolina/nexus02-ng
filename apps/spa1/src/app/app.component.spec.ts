@@ -1,21 +1,40 @@
 import { TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { AppComponent, fib } from './app.component';
+import { DialogComponent } from './dialog/dialog.component';
+
+describe('fib', () => {
+  it('fib(0) = 0', () => {
+    expect(fib(0)).toBe(0);
+  });
+  it('fib(1) = 1', () => {
+    expect(fib(1)).toBe(1);
+  });
+  it('fib(2) = 1', () => {
+    expect(fib(2)).toBe(1);
+  });
+  it('fib(3) = 2', () => {
+    expect(fib(3)).toBe(2);
+  });
+  it('fib(4) = 3', () => {
+    expect(fib(4)).toBe(3);
+  });
+});
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent, NxWelcomeComponent],
+      imports: [RouterTestingModule, FormsModule],
+      declarations: [AppComponent, DialogComponent],
     }).compileComponents();
   });
 
-  it('should render title', () => {
+  it('should render title = Applicacion', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Welcome spa1');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Applicacion');
   });
 
   it(`should have as title 'spa1'`, () => {
