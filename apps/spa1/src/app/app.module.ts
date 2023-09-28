@@ -6,9 +6,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { DialogComponent } from './dialog/dialog.component';
+import { LoginComponent } from './login/login.component';
 import { PlanetDetailComponent } from './planets/planet-detail/planet-detail.component';
 import { PlanetListComponent } from './planets/planet-list/planet-list.component';
 import { TemperaturaComponent } from './temperatura/temperatura.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { TemperaturaComponent } from './temperatura/temperatura.component';
     DialogComponent,
     PlanetDetailComponent,
     PlanetListComponent,
+    LoginComponent,
+    WelcomeComponent,
   ],
   imports: [
     FormsModule,
