@@ -6,7 +6,10 @@ import { PlanetService } from '../../services/planet.service';
 import { PlanetListComponent } from './planet-list.component';
 
 class PlanetServiceMock {
+  numberOfCalls = 0;
+
   getPlanets(): Observable<Planet[]> {
+    this.numberOfCalls++;
     return of([
       {
         name: 'A',
