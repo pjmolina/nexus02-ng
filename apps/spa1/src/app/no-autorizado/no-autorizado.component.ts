@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'org-welcome',
   template: `<div>
-    <h2>No autorizado</h2>
+    <h1>No autorizado</h1>
   </div>`,
 })
 export class NoAutorizadoComponent {}
